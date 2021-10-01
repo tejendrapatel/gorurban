@@ -1,0 +1,90 @@
+{% load static %}
+ {% include 'frontend/header.html' %}
+ <div style="margin-top: -20px;">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'new_dog_template/images/bann.png' %});" data-stellar-background-ratio="0.5">
+      <div class="container" >
+        <div class="row no-gutters slider-text align-items-end">
+          <div class="col-md-9 ftco-animate pb-5">
+          	
+            <p style="font-weight: 900;font-size: 80px;color:#fff ;text-shadow: 2px 2px 3px black;">Blog Detail</p>
+          </div>
+        
+      </div>
+    </section>
+</div>
+
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 ftco-animate">
+            <p>
+            <img src="{{ blosingle.image1.url }}" alt="" class="img-fluid">
+          </p>
+          <h2 class="mb-3">{{ blosingle.Heading }}</h2>
+          <p>{{ blosingle.Discription|safe }}</p>
+
+          
+          
+
+
+
+        </div> <!-- .col-md-8 -->
+        <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
+          <div class="sidebar-box">
+            <form action="#" class="search-form">
+              <div class="form-group">
+                <span class="fa fa-search"></span>
+                <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+              </div>
+            </form>
+          </div>
+          
+
+          <div class="sidebar-box ftco-animate">
+            <h3>Recent Blog</h3>
+            {% for i in recent %}
+            <div class="block-21 mb-4 d-flex">
+              <a class="blog-img mr-4" style="background-image: url({{ i.image1.url }});"></a>
+              <div class="text">
+                <h3 class="heading"><a href="#">{{ i.Heading }}</a></h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span>{{ i.date }}</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+           
+           {% endfor %}
+          </div>
+
+          
+
+          <div class="sidebar-box ftco-animate">
+            <h3>Paragraph</h3>
+            <p style="text-align: justify;"> {{ blosingle.Detail }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section> <!-- .section -->
+
+{% include 'frontend/footer.html' %}
+<script src="{% static 'new_dog_template/js/jquery.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/popper.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'new_dog_template/js/google-map.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/main.js' %}"></script>

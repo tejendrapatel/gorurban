@@ -1,0 +1,56 @@
+{% load static %}
+ {% include 'frontend/header.html' %}
+ <div style="margin-top: -20px;">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'new_dog_template/images/bann.png' %});" data-stellar-background-ratio="0.5">
+      <div class="container" >
+        <div class="row no-gutters slider-text align-items-end">
+          <div class="col-md-9 ftco-animate pb-5">
+          	
+            <p style="font-weight: 900;font-size: 80px;color:#fff ;text-shadow: 2px 2px 3px black;">Blogs</p>
+          </div>
+        
+      </div>
+    </section>
+</div>
+
+<section class="section service-2">
+	<div class="container">
+
+		<div class="row">
+            {% for i in blo %}
+			<div class="col-lg-4 col-md-6 ">
+				<div class="department-block mb-5">
+					<img src="{{ i.image1.url }}" style="width: 300px;height: 250px;box-shadow: 0px 0px 6px 5px #484848" alt="" class="img-fluid w-100">
+					<div class="content">
+                        <p class="mb-4" style="color:#ffbb00">{{ i.date }}</p>
+						<h4 class="mt-4 mb-2 title-color">{{ i.category }}</h4>
+						<p class="mb-4"  style="text-align: justify;font-size: large;font-weight: 600px;">{{ i.Heading }}</p>
+                        <p class="mb-4" style="color: #0f5233;text-align: justify;font-size: large;">{{ i.Detail }}</p>
+						<a href="{% url 'blog_single' i.id %}" class="read-more">Learn More  <i class="icofont-simple-right ml-2"></i></a>
+					</div>
+				</div>
+			</div>
+            {% endfor %}
+
+		
+		</div>
+	</div>
+</section>
+
+{% include 'frontend/footer.html' %}
+<script src="{% static 'new_dog_template/js/jquery.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/popper.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'new_dog_template/js/google-map.js' %}"></script>
+  <script src="{% static 'new_dog_template/js/main.js' %}"></script>
