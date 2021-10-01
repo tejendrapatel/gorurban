@@ -58,7 +58,7 @@ def Home(request):
     if request.method == "POST":
         newsl = request.POST['newsletter']
         EMAIL_LETTERS.objects.create(mubmail=newsl)
-    test = TESTIMONY.objects.all()
+    
 
     neww = NEWSS.objects.all().order_by('-id')
     eve = EVENTS.objects.all().order_by('-id')
@@ -69,7 +69,19 @@ def Home(request):
     new = neww[:4]
     evee = eve[:4]
     year= Year_categoryss.objects.all()
-    d = {"test":test,"new":new,"abo":abo,"cam":cam,"ana":ana,"sto":sto,"test":test,"year":year,"evee":evee}
+    d = {"test":test,"new":new,"abo":abo,"cam":cam,"ana":ana,"sto":sto,"year":year,"evee":evee}
+    return render(request, 'main_page/index_comp.html',d)
+
+
+def Home(request):
+    neww = NEWSS.objects.all().order_by('-id')
+    eve = EVENTS.objects.all().order_by('-id')
+    year= Year_categoryss.objects.all()
+    gal= GALLERYSS.objects.all().order_by('-id')
+    test = TESTIMONY.objects.all()
+    new = neww[:4]
+    evee = eve[:4]
+    d = {"new":new,"evee":evee,"year":year,"test":test,"gal":gal}
     return render(request, 'main_page/index_comp.html',d)
 #####New###
 def CONTACT(request):
@@ -126,16 +138,11 @@ def CAMPS(request):
     d = {"mo":mo,"cam":cam,"zcmap": zcmap}
     return render(request, 'frontend/camps.html',d)
 
-
+######NEW######
 def ABOUT(request):
-    abo = About.objects.filter(heading="About Gorurban")
-    his = About.objects.filter(heading="History Gorurban")
-    obj = About.objects.filter(heading="Objective Gorurban")
     team = Team.objects.all()
-    mcm = Camps.objects.all()
-    zcmap = mcm[:3]
-
-    d = {"abo":abo,"his":his,"obj":obj,"team":team,"zcmap": zcmap}
+    year= Year_categoryss.objects.all()
+    d = {"team":team,"year":year,}
     return render(request, 'frontend/about.html',d)
 #####NEW##
 def BLOGSS(request):

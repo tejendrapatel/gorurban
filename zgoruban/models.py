@@ -51,6 +51,7 @@ class Year_categoryss(models.Model):
 class GALLERYSS(models.Model):
     years = models.ForeignKey(Year_categoryss, on_delete=models.CASCADE, null=True, blank=True)
     image = models.FileField(null=True)
+    image2 = models.FileField(null=True)
 
 class NEWSS(models.Model):
     years = models.ForeignKey(Year_categoryss, on_delete=models.CASCADE, null=True, blank=True)
